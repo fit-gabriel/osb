@@ -1,0 +1,8 @@
+[submodule "osb-core"]
+	path = osb-core
+	url = https://github.com/ikaro-souza/osb-core
+	branch = main
+[submodule "osb-portal"]
+	path = osb-portal
+	url = https://github.com/ikaro-souza/osb-portal
+	branch = main
