@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch OSB Core",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build core",
+            "program": "${workspaceFolder}/osb-core/bin/Debug/net5.0/osb-core.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Launch OSB Portal",
+            "request": "launch",
+            "type": "pwa-msedge",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/osb-portal/",
+            "preLaunchTask": "start portal",
+            "postDebugTask": "stop portal"
+        },
+    ],
+    "compounds": [
+        {
+            "name": "Launch OSB",
+            "configurations": [
+                "Launch OSB Portal",
+                "Launch OSB Core",
+            ]
+        }
+    ]
+}
