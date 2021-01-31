@@ -11,11 +11,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     
-    env:
-      HEROKU_API_KEY: ${{ secrets.HEROKU_KEY }}
-      HERKO_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
