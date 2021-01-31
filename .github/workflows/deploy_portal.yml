@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - osb-portal
+name: Build and deploy osb-portal
 
 on:
   push:
@@ -14,13 +14,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+      with:
+        submodules: recursive
 
     - name: Set up Node.js version
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+        
+    - name: Cd to portal directory
+      run: cd osb-portal
 
-    - name: npm install, build, and test
+    - name: Build and test app
       run: |
         npm install
         npm run build --if-present
@@ -32,4 +37,4 @@ jobs:
         app-name: 'osb-portal'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_25414f2afbce47a3a3c43359d9a367ab }}
-        package: .
+        package: ./osb-portal
