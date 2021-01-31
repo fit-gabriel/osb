@@ -79,3 +79,7 @@ Esta POC tem a intenção de demonstrar vantagens e desvantagens do uso de [subm
 Para clonar um repositório com seus submódulos, é necessário adicionar a flag `--recursive` ao comando `git clone`, ficando assim: `git clone --recursive url`. No exemplo da imagem há também a flag `-j2`, ela determina em quantas threads o comando `git clone` será executado, o uso dessa flag é opcional.
 
 ![repositório clonado](docs/img/clone_osb_repo_recursive.png)
+
+## Executando o projeto de exemplo
+
+Tanto os submódulos quanto o repositório com submódulos estão configurados para serem debuggados pelo VSCode, então basta abrir o projeto e apertar F5 👍.
