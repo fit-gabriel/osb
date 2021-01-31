@@ -19,4 +19,10 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_KEY }}
         run: heroku container:login
+     
+      - name: Build application
+        run: heroku container:push -a portal web
         
+      - name: Release application
+        run: heroku container:release -a portal web
+    
