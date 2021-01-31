@@ -28,7 +28,6 @@
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}/osb-portal/",
             "preLaunchTask": "start portal",
-            "postDebugTask": "stop portal"
         },
     ],
     "compounds": [
