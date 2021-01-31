@@ -34,5 +34,5 @@ jobs:
       with:
         app-name: 'osb-portal'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_25414f2afbce47a3a3c43359d9a367ab }}
-        package: ./osb-portal
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: './osb-portal/build'
