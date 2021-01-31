@@ -1,0 +1,22 @@
+name: Deploy OSB Portal
+
+on: 
+  push:
+    branches: 
+      - main
+      - 'release/**'
+
+
+jobs:
+  deploy:
+    runs-on: unbuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Login to Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_KEY }}
+        run: heroku container:login
+        
